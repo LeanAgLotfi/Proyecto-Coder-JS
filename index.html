@@ -4,18 +4,72 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyecto Final Coder House - LIBRO Y LECTOR</title>
-    <script defer src="./main.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Playfair+Display:ital,wght@1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <script src="./main.js"></script>
+    <link rel="stylesheet" href="./main.css">
+    <title>JavaScript</title>
 </head>
-<body>
-    <header>
-        <h1>L & L</h1>
-    </header>
-    <main>
-
-    </main>
-    <footer>
-
-    </footer>
+<body class="Body">
+    <header class="header">
+        <div class="titulo">
+            
+            <a href="#" class="logo"></a>
+            <img class="LYL" src="./imagenes/image.png" alt="">
+                <ul>
+                    <li><a id="home" href="">home</a></li>
+                    <li><a href="">biblioteca</a></li>
+                    <li><a href="">contacto</a></li>
+                </ul>
+        </div>
+        <!--Images slider start-->
+        <div class="imagenesCarrusel slider">
+            <div class="slides">
+                <!--radio buttons start-->
+                <input type="radio" name="radio-btn" id="radio1">
+                <input type="radio" name="radio-btn" id="radio2">
+                <input type="radio" name="radio-btn" id="radio3">
+                <input type="radio" name="radio-btn" id="radio4">
+                <!--radio buttons end-->
+                <!--slide images start-->
+                <div class="slide first">
+                    <img src="./imagenes/1-img-libros.png" alt="">
+                </div>
+                <div class="slide">
+                    <img src="./imagenes/2-img-libros.png" alt="">
+                </div>
+                <div class="slide">
+                    <img src="./imagenes/3-img-libros.png" alt="">
+                </div>
+                <div class="slide">
+                    <img src="./imagenes/4-img-libros.png" alt="">
+                </div>
+                <!--slide images end-->
+                <!--automatic navegation start-->
+                <div class="navegation-auto">
+                    <div class="auto-btn1"></div>
+                    <div class="auto-btn2"></div>
+                    <div class="auto-btn3"></div>
+                    <div class="auto-btn4"></div>
+                </div>
+                <!--automatic navegation end-->
+            </div>
+            <!--manual navigation start-->
+            <div class="navigation-manual">
+                <label for="radio1" class="manual-btn"></label>
+                <label for="radio2" class="manual-btn"></label>
+                <label for="radio3" class="manual-btn"></label>
+                <label for="radio4" class="manual-btn"></label>
+            </div>
+            <!--manual navigation end-->
+        </div>
+        <!--image slider end-->
+    </header> 
+    
 </body>
 </html>
