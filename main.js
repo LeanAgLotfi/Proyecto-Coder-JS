@@ -1,5 +1,5 @@
 
-let usuario = prompt("Ingrese un Nombre:")
+/*let usuario = prompt("Ingrese un Nombre:")
 
 function ingresarUsuario() {
     
@@ -23,7 +23,7 @@ function usuarioCorrecto(){
     if(decision == "si"){
         saludo()
     }
-}
+}*/
 
 usuarioCorrecto()
 //ARRAY
@@ -108,4 +108,19 @@ setInterval(function(){
     }
 }, 5000);
 
+/*function verificar(){
+    for(let i = 0; i < 20; i++)
+    document.getElementById('btn$')
+    alert(`seleccionaste ${i} de elementos`)
+}*/
 
+let boton = document.getElementById("btn1")
+boton.addEventListener("click", respuestaClick)
+function respuestaClick(){
+    console.log("Respuesta evento");
+}
+
+let filtro = document.getElementById("btn2")
+filtro.addEventListener('input', () => {console.log(filtro.value)})
+filtro.onclick = () => {alert("filtro colocado")}
+filtro.onmouseout = () => {alert("toque el filtro")}
