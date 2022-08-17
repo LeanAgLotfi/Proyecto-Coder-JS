@@ -204,4 +204,118 @@ justify-content: center;
     background: rgb(209, 135, 7);;
 }
 
+/*BIBLIOTECA*/
 
+.bibliotecaFondo{
+    display: flex;
+    justify-content: center;
+    background: beige;
+    padding: 20px;
+    background-image: url(./imagenes/libros-7-background.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center center;
+}
+
+.fondoImagenBiblio img{
+    position: relative;
+    top: -20px; 
+    filter: drop-shadow(6px 6px 6px black);
+}
+
+.bibliotecaNav ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-decoration: none;
+    font-size: 30px;
+    background: rgb(209, 135, 7);
+}
+
+.bibliotecaNav ul li{
+    list-style: none; 
+    margin-right: 20px;
+    margin-left: 20px;
+    padding-left: 40px;
+    padding-right:40px ;
+}
+.bibliotecaNav ul li a{
+    text-decoration: none;
+    color: wheat;
+   
+}
+
+.bibliotecaNav ul :hover{
+    color: white;
+    background: rgb(226, 146, 7);
+}
+
+/*MAIN BIBLIOTECA*/
+
+.contenidoBiblio {
+    background: wheat;
+    padding: 30px;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+/*LIBROS*/
+
+#content {
+    background-color: maroon;
+    font-size: 0;
+    padding: 20px;
+    display: flex;
+    margin: 10px;
+    margin-right: 300px;
+    justify-content: center;
+    float: right;
+}
+
+ 
+ #left, #right {
+     display: inline-block;
+     box-sizing: border-box;
+     width: 300px;
+     height: 300px;
+ }
+ 
+ #left {
+     background-color: blue;
+     margin-right: 50px;
+ }
+ 
+ #right {
+     background-color: green;
+ }
+aside{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+.filtrado ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.filtrado ul li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.filtrado ul li a{
+    text-decoration: none;
+    list-style: none;
+    color: red;
+}
