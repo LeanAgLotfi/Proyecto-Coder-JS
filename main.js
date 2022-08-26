@@ -1,4 +1,4 @@
-const ulFiltro = document.getElementById('filtros');
+/*const ulFiltro = document.getElementById('filtros');
 
 //ARRAY DE OBJETOS
 const arrayDelibros = []
@@ -58,9 +58,10 @@ const arrayLibros = [
 const libros = ['don quijote', 'moby dick', 'fantasma de la opera', 'it', 'harry potter', 'el señor de los anillos',  'orgullo y prejuicio', 'bajo la misma estrella', 'crimen de la calle morgue', 'sherlock holmes']
 
 
+
 const fragment = document.createDocumentFragment()
 
-
+//-------------------------------------------------
 libros.forEach( (libro) => {
     const li = document.createElement('li')
     li.textContent = libro
@@ -68,6 +69,8 @@ libros.forEach( (libro) => {
 })
 
 ulFiltro.appendChild(fragment);
+//-------------------------------------------------
+
 
 const contenido = document.querySelector(".contenido");
 const carritoDiv = document.getElementById("carrito");
@@ -87,58 +90,7 @@ function contenidoCarta() {
 
 contenidoCarta();
 
-    const productos = [
-        {   nombre: 'don quijote',
-            precio:200,
-            id:1,
-        },
-    
-        {   nombre: 'moby dick', 
-            precio:120,
-            id:2
-        },
-    
-        {   nombre: 'fantasma de la opera',
-            precio:100,
-            id:3,
-        },
-    
-        {   nombre: 'it', 
-            precio:700,
-            id:4,
-        },
-    
-        {   nombre: 'harry potter',
-            precio:800,
-            id:5,
-        },
-    
-        {   nombre: 'el señor de los anillos',
-            precio:500,
-            id:6,
-        },
-    
-        {   nombre: 'orgullo y prejuicio', 
-            precio:250,
-            id:7,
-        },
-    
-        {   nombre: 'bajo la misma estrella', 
-            precio:120,
-            id:8,
-        },
-    
-        {   nombre: 'crimen de la calle morgue', 
-            precio:400,
-            id:9,
-        },
-    
-        {   nombre: 'sherlock holmes', 
-            precio:250,
-            id: 10,
-        },
-    ]
-     /* 
+      
       const containerDiv = document.getElementById("conteiner");
       const carritoDiv = document.getElementById("carrito");
       
@@ -209,7 +161,7 @@ contenidoCarta();
       }
       
       crearCards();
-      renderizarCarrito();*/
+      renderizarCarrito();
 
 
 
@@ -217,7 +169,7 @@ contenidoCarta();
 
 
 
-/*let usuario = prompt("Ingrese un Nombre:")
+let usuario = prompt("Ingrese un Nombre:")
 
 function ingresarUsuario() {
     
@@ -314,12 +266,9 @@ function verificar(){
     for(let i = 0; i < 20; i++)
     document.getElementById('btn$')
     alert(`seleccionaste ${i} de elementos`)
-}*/
+}
 
-
-
-
-
+*/
 
 
 

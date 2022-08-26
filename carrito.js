@@ -1,7 +1,5 @@
-
-
-
-const stockProductos= [
+const stockProductos= 
+[
     {   nombre: 'don quijote',
         precio:200,
         desc:'Las aventuras de Don quijote y Sancho panza en una encrucijada por la mancha',
@@ -23,6 +21,7 @@ const stockProductos= [
         desc:'Un hombre atormentado cuyo rostro, deformado de nacimiento, le otorgaba el aspecto de una verdadera aparición en el subterraneo de la opera',
         genero:'Terror',
         img:'./imagenes/libro-3-array.png',
+        cantidad:1,
         id:3,
     },
 
@@ -31,6 +30,7 @@ const stockProductos= [
         desc:'El payaso maligno venido del espacio solo para aterrorizar y deborar',
         genero:'Terror',
         img:'./imagenes/libro-4-array.png',
+        cantidad:1,
         id:4,
     },
 
@@ -39,6 +39,7 @@ const stockProductos= [
         desc:'La historia del gran mago Harry Potter y sus aventuras por Howards',
         genero:'Fantasia',
         img:'./imagenes/libro-5-array.png',
+        cantidad:1,
         id:5,
     },
 
@@ -47,6 +48,7 @@ const stockProductos= [
         desc:'La encrucijada mas grande y la posible guerra por el poder del anillo y su deseo de poseerlo!',
         genero:'Fantasia',
         img:'./imagenes/libro-6-array.png',
+        cantidad:1,
         id:6,
     },
 
@@ -80,25 +82,98 @@ const stockProductos= [
         genero:'Policial',
         img:'./imagenes/libro-10-array.png',
         id: 10,
-    },
-]
-
+    }
+];
+const body = document.getElementById('contenedorPrincipal');
 const productoCarrito = document.getElementById("contenido");
 
-    //function crearCarta() {
-        stockProductos.forEach((productos) => {
+const contenedorCarrito = document.getElementsByClassName("carrito-contenedor");
+const contadorCarrito = document.querySelector('.spanC');
+const precioTotal = document.getElementById("precioTotal");
+const modal = document.getElementsByClassName('modal-container');
+//const open = document.getElementsByClassName('boton-agregar')
+//const close = document.getElementById('close');
+let carrito = [];
+
+
+function stock(){
+    stockProductos.forEach((productos) => {
         const div = document.createElement('div')
-        div.classList.add('productos')
-        div.innerHTML = `
-        <img  class="imgLibros" scr=${productos.img} alt="">
-        <h3>${productos.nombre}</h3>
-        <p>${productos.desc}</p>
-        <p>${productos.genero}</p>
-        <p class="precioProductos">Precio:$${productos.precio}</p>
-        <button id="agregarBtn${productos.id}" class="boton-agregar">Agregar</button> `
-
-        productoCarrito.appendChild(div);
+         div.classList.add('producto')
+         div.innerHTML += `
+                <img  class="imgLibros" src="${productos.img}" alt="">
+                <h3>${productos.nombre}</h3>
+                <p>${productos.desc}</p>
+                <p>${productos.genero}</p>
+                <p class="precioProductos">Precio:$${productos.precio}</p>
+                <button id="agregarBtn${productos.id}" class="boton-agregar">Agregar</button>
+                `
+           productoCarrito.appendChild(div);
+           //document.querySelector(`#agregarBtn${productos.id}`).addEventListener('click', () =>{
+            //modal.classList.add('show');
+        // });
     });
-//} 
+     funcionBoton();
+}
 
-//crearCarta();
+function modalStock() {
+    stockProductos.forEach((productos) => {
+        const div = document.createElement('div')
+        div.classList.add('modal-container')
+        div.innerHTML += `
+        <div class="modal">
+          <h1>${productos.nombre} Libro</h1>
+          <img src="${productos.img}" class="imgLibros" alt="">
+          <p></p>
+          <button class="boton-agregar" id="cerrar${productos.id}">CERRAR</button>
+        `
+        productoCarrito.appendChild(div);
+            document.querySelector(`#cerrar${productos.id}`).addEventListener('click', () =>{
+               modal.classList.remove('show');
+            });
+    });
+   
+}
+
+let total = 0;
+
+const pagar = document.getElementById('pagar');
+//boton cerrar
+
+//abrir
+//open.addEventListener('click', () =>{
+    //  modal.classList.add('show');});
+
+function funcionBoton(){
+    stockProductos.forEach((productos) => {
+        document
+          .querySelector(`#agregarBtn${productos.id}`)
+          .addEventListener("click", () => {
+            console.log(productos);
+            
+           agregarAlCarrito(productos);
+          });
+      })
+    }
+
+function agregarAlCarrito(productos) {
+   let existe = carrito.some(prodSome => prodSome.id === productos.id) 
+   if(existe === false){
+    productos.cantidad = 1;
+    carrito.push(productos);
+   }else{
+    let prodFind = carrito.find(productosFind => productosFind.id === productos.id)
+    prodFind.cantidad++
+   }
+   contadorCarrito.innerText = carrito.length; 
+   localStorage.setItem("carrito", JSON.stringify(carrito));
+}
+
+
+
+//modalStock();
+stock();
+
+
+
+

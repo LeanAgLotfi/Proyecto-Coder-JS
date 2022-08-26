@@ -263,3 +263,119 @@ justify-content: center;
 
 
 /*LIBROS*/
+
+.producto{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    background: orange;
+    padding: 10px;
+    margin: 10px;
+    gap: 10px; 
+    width: 430px;
+    height: 600px;
+}
+
+.imgLibros{
+    width: 300px;
+    height: 300px;
+}
+
+#contenido{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+ .car{
+    display: flex;
+    font-size: 50px;
+    color: gold;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 5px;
+    margin-right: 20px;
+   
+}
+
+p{
+    text-align: center;
+}
+
+.boton-agregar{
+    background-color: #fff;
+    border: 1px solid orange;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(2, 2, 2, 0.824);
+    color: orange;
+    font-size: 14px;
+    padding: 10px 25px;
+    cursor: pointer;
+    pointer-events: all;
+}
+
+#open{
+    position: absolute;
+    pointer-events: all;
+}
+
+.modal-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    display: none;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+/*.modal-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    display: none;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+}*/
+
+.show{
+    pointer-events: auto;
+    opacity: 1;
+    display: flex;
+}
+
+.modal{
+    background-color: rgb(255 148 0 / 93%);
+    width: 400px;
+    max-width: 100%;
+    padding: 20px 50px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    box-shadow: 0 2px 4px rgba(2, 2, 2, 0.824);
+}
+
+.modal h1 {
+
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.modal p{
+    opacity: 0.7;
+    font-size: 14px;
+}

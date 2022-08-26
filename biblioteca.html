@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./main.css" />
-    <script defer src="./carrito.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <title>Biblioteca</title>
   </head>
-  <body>
+  <body id="contenedorPrincipal">
     <header class="headerBiblio">
       <div class="bibliotecaFondo">
         <div class="fondoImagenBiblio">
@@ -21,18 +21,15 @@
           <li><a href="">biblioteca</a></li>
           <li><a href="">contacto</a></li>
         </ul>
-      </div>
-    </header>
-    <main>
-    <div class="contenidoBiblio">
+      </div> 
+      <div class="contenidoBiblio">
         <div class="texto">
-            <p>mucho texto</p>
+            <button id="pagar" class="boton-agregar">PAGAR <span class="spanC">0</span></button>
         </div>
-    </div> 
-    <div class="contenido">
-
-    </div>
+    </header>
+    <main id="contenido">
     </main>
-    
+    <script defer src="./carrito.js"></script>
   </body>
+  
 </html>
