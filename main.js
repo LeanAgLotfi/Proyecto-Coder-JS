@@ -7,6 +7,18 @@ Clickbutton.forEach(btn =>{
     btn.addEventListener('click', addCarritoItem)
 })
 
+Clickbutton.forEach(btn => {
+        btn.addEventListener('click', () =>{
+    Toastify({
+
+        text: "Agregado al carrito!",
+        
+        duration: 3000
+        
+        }).showToast();
+    })
+})
+
 function addCarritoItem(e){
     const button = e.target
     const item = button.closest('.card')
@@ -123,7 +135,13 @@ window.onload = function(){
     }
 }
 
+Toastify({
 
+    text: "This is a toast",
+    
+    duration: 3000
+    
+    }).showToast();
 
 
 
