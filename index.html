@@ -1,75 +1,480 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Playfair+Display:ital,wght@1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
-    <script src="./main.js"></script>
-    <link rel="stylesheet" href="./main.css">
-    <title>JavaScript</title>
-</head>
-<body class="Body">
-    <header class="header">
-        <div class="titulo">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- CSS only -->
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./main.css" />
+  </head>
+  <body>
+    <header
+      class="container-fluid bg-warning position-sticky top-0"
+      id="cabeza"
+    >
+      <ul
+        class="nav nav-pills mb-3 py-3 container"
+        id="pills-tab"
+        role="tablist"
+      >
+        <li class="nav-item" role="presentation">
+          <a
+            class="nav-link"
+            id="pills-home-tab"
+            data-bs-toggle="pill"
+            data-bs-target="#pills-home"
+            type="button"
+            role="tab"
+            aria-controls="pills-home"
+            aria-selected="true"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item" role="presentation">
+          <a
+            class="nav-link active"
+            id="pills-profile-tab"
+            data-bs-toggle="pill"
+            data-bs-target="#pills-profile"
+            type="button"
+            role="tab"
+            aria-controls="pills-profile"
+            aria-selected="false"
+            >Productos</a
+          >
+        </li>
+        <li class="nav-item" role="presentation">
+          <a
+            class="nav-link"
+            id="pills-contact-tab"
+            data-bs-toggle="pill"
+            data-bs-target="#pills-contact"
+            type="button"
+            role="tab"
+            aria-controls="pills-contact"
+            aria-selected="false"
+            >Carrito</a
+          >
+        </li>
+      </ul>
+    </header>
+    <main class="UNMAIN">
+<!--HOME-->
+      <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
             
-            <a href="#" class="logo"></a>
-            <img class="LYL" src="./imagenes/image.png" alt="">
-                <ul>
-                    <li><a id="home" href="">home</a></li>
-                    <li><a href="./biblioteca.html">biblioteca</a></li>
-                    <li><a href="">contacto</a></li>
-                </ul>
+        <div class="Body">
+            <div class="header">
+                <div class="titulo">
+                    <a href="#" class="logo"></a>
+                    <img class="LYL" src="./imagenes/image.png" alt="">
+                </div>
+                <!--Images slider start-->
+                <div class="imagenesCarrusel slider">
+                    <div class="slides">
+                        <!--radio buttons start-->
+                        <input type="radio" name="radio-btn" id="radio1">
+                        <input type="radio" name="radio-btn" id="radio2">
+                        <input type="radio" name="radio-btn" id="radio3">
+                        <input type="radio" name="radio-btn" id="radio4">
+                        <!--radio buttons end-->
+                        <!--slide images start-->
+                        <div class="slide first">
+                            <img src="./imagenes/1-img-libros.png" alt="">
+                        </div>
+                        <div class="slide">
+                            <img src="./imagenes/2-img-libros.png" alt="">
+                        </div>
+                        <div class="slide">
+                            <img src="./imagenes/3-img-libros.png" alt="">
+                        </div>
+                        <div class="slide">
+                            <img src="./imagenes/4-img-libros.png" alt="">
+                        </div>
+                        <!--slide images end-->
+                        <!--automatic navegation start-->
+                        <div class="navegation-auto">
+                            <div class="auto-btn1"></div>
+                            <div class="auto-btn2"></div>
+                            <div class="auto-btn3"></div>
+                            <div class="auto-btn4"></div>
+                        </div>
+                        <!--automatic navegation end-->
+                    </div>
+                    <!--manual navigation start-->
+                    <div class="navigation-manual">
+                        <label for="radio1" class="manual-btn"></label>
+                        <label for="radio2" class="manual-btn"></label>
+                        <label for="radio3" class="manual-btn"></label>
+                        <label for="radio4" class="manual-btn"></label>
+                    </div>
+                    <!--manual navigation end-->
+                </div>
+                <!--image slider end-->
+            </div> 
+            
         </div>
-        <!--Images slider start-->
-        <div class="imagenesCarrusel slider">
-            <div class="slides">
-                <!--radio buttons start-->
-                <input type="radio" name="radio-btn" id="radio1">
-                <input type="radio" name="radio-btn" id="radio2">
-                <input type="radio" name="radio-btn" id="radio3">
-                <input type="radio" name="radio-btn" id="radio4">
-                <!--radio buttons end-->
-                <!--slide images start-->
-                <div class="slide first">
-                    <img src="./imagenes/1-img-libros.png" alt="">
-                </div>
-                <div class="slide">
-                    <img src="./imagenes/2-img-libros.png" alt="">
-                </div>
-                <div class="slide">
-                    <img src="./imagenes/3-img-libros.png" alt="">
-                </div>
-                <div class="slide">
-                    <img src="./imagenes/4-img-libros.png" alt="">
-                </div>
-                <!--slide images end-->
-                <!--automatic navegation start-->
-                <div class="navegation-auto">
-                    <div class="auto-btn1"></div>
-                    <div class="auto-btn2"></div>
-                    <div class="auto-btn3"></div>
-                    <div class="auto-btn4"></div>
-                </div>
-                <!--automatic navegation end-->
-            </div>
-            <!--manual navigation start-->
-            <div class="navigation-manual">
-                <label for="radio1" class="manual-btn"></label>
-                <label for="radio2" class="manual-btn"></label>
-                <label for="radio3" class="manual-btn"></label>
-                <label for="radio4" class="manual-btn"></label>
-            </div>
-            <!--manual navigation end-->
         </div>
-        <!--image slider end-->
-    </header> 
+
+<!--FIN DE HOME-->
+<!--BIBLIOTECA-->
+        <div
+          class="tab-pane fade show active container"
+          id="pills-profile"
+          role="tabpanel"
+          aria-labelledby="pills-profile-tab"
+        >
+          <h2 class="h4 m-4 text-dark">Biblioteca</h2>
+          <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 cartita"id="cartita">
+            <div class="col d-flex justify-content-center ab-4">
+              <div class="card shadow mb-1 bg-warning rounded" style="width: 20rem">
+                    <h5 class="card-title pt-2 text-center text-dark nombreLibro">Don Quijote</h5>
+                    <img src="./imagenes/libro-1-array.png" class="card-img-top" alt="..."/>
+                    <div class="card-body">
+                    <p class="card-text text-dark-50 description">
+                        Some quick example text to build on the card title and make
+                        up the bulk of the card's content.
+                    </p>
+                    <h5 class="text-dark">Precio: <span class="precio">$ 200</span> </h5>
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-primary button">
+                        Añadir al Carrito
+                        </button>
+                    </div>
+                    </div>
+              </div>
+            </div>
+
+            <div class="col d-flex justify-content-center-ab-4">
+              <div
+                class="card shadow mb-1 bg-warning rounded"
+                style="width: 20rem"
+              >
+                <h5 class="card-title pt-2 text-center text-dark nombreLibro">
+                  Moby Dick
+                </h5>
+                <img
+                  src="./imagenes/libro-2-array.png"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <p class="card-text text-dark-50 description">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                  <h5 class="text-dark">
+                    Precio: <span class="precio">$ 300</span>
+                  </h5>
+                  <div class="d-grid gap-2">
+                    <button class="btn btn-primary button">
+                      Añadir al Carrito
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col d-flex justify-content-center-ab-4">
+              <div
+                class="card shadow mb-1 bg-warning rounded"
+                style="width: 20rem"
+              >
+                <h5 class="card-title pt-2 text-center text-dark nombreLibro">
+                  Fantasma de la Opera
+                </h5>
+                <img
+                  src="./imagenes/libro-3-array.png"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <p class="card-text text-dark-50 description">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                  <h5 class="text-dark">
+                    Precio: <span class="precio">$ 150</span>
+                  </h5>
+                  <div class="d-grid gap-2">
+                    <button class="btn btn-primary button">
+                      Añadir al Carrito
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col d-flex justify-content-center-ab-4">
+              <div
+                class="card shadow mb-1 bg-warning rounded"
+                style="width: 20rem"
+              >
+                <h5 class="card-title pt-2 text-center text-dark nombreLibro">
+                  IT
+                </h5>
+                <img
+                  src="./imagenes/libro-4-array.png"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <p class="card-text text-dark-50 description">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                  <h5 class="text-dark">
+                    Precio: <span class="precio">$ 800</span>
+                  </h5>
+                  <div class="d-grid gap-2">
+                    <button class="btn btn-primary button">
+                      Añadir al Carrito
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col d-flex justify-content-center-ab-4">
+              <div
+                class="card shadow mb-1 bg-warning rounded"
+                style="width: 20rem"
+              >
+                <h5 class="card-title pt-2 text-center text-dark nombreLibro">
+                  Harry Potter
+                </h5>
+                <img
+                  src="./imagenes/libro-5-array.png"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <p class="card-text text-dark-50 description">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                  <h5 class="text-dark">
+                    Precio: <span class="precio">$ 750</span>
+                  </h5>
+                  <div class="d-grid gap-2">
+                    <button class="btn btn-primary button">
+                      Añadir al Carrito
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col d-flex justify-content-center-ab-4">
+              <div
+                class="card shadow mb-1 bg-warning rounded"
+                style="width: 20rem"
+              >
+                <h5 class="card-title pt-2 text-center text-dark nombreLibro">
+                  El Señor de los Anillos
+                </h5>
+                <img
+                  src="./imagenes/libro-6-array.png"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <p class="card-text text-dark-50 description">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                  <h5 class="text-dark">
+                    Precio: <span class="precio">$ 900</span>
+                  </h5>
+                  <div class="d-grid gap-2">
+                    <button class="btn btn-primary button">
+                      Añadir al Carrito
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col d-flex justify-content-center-ab-4">
+              <div
+                class="card shadow mb-1 bg-warning rounded"
+                style="width: 20rem"
+              >
+                <h5 class="card-title pt-2 text-center text-dark nombreLibro">
+                  Orgullo Y Prejucio
+                </h5>
+                <img
+                  src="./imagenes/libro-7-array.jpg"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <p class="card-text text-dark-50 description">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                  <h5 class="text-dark">
+                    Precio: <span class="precio">$ 250</span>
+                  </h5>
+                  <div class="d-grid gap-2">
+                    <button class="btn btn-primary button">
+                      Añadir al Carrito
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col d-flex justify-content-center-ab-4">
+              <div
+                class="card shadow mb-1 bg-warning rounded"
+                style="width: 20rem"
+              >
+                <h5 class="card-title pt-2 text-center text-dark nombreLibro">
+                  Bajo la misma Estrella
+                </h5>
+                <img
+                  src="./imagenes/libro-8-array.png"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <p class="card-text text-dark-50 description">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                  <h5 class="text-dark">
+                    Precio: <span class="precio">$ 600</span>
+                  </h5>
+                  <div class="d-grid gap-2">
+                    <button class="btn btn-primary button">
+                      Añadir al Carrito
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col d-flex justify-content-center-ab-4">
+              <div
+                class="card shadow mb-1 bg-warning rounded"
+                style="width: 20rem"
+              >
+                <h5 class="card-title pt-2 text-center text-dark nombreLibro">
+                  Los crimenes de la calle Morgue
+                </h5>
+                <img
+                  src="./imagenes/libro-9-array.png"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <p class="card-text text-dark-50 description">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                  <h5 class="text-dark">
+                    Precio: <span class="precio">$ 200</span>
+                  </h5>
+                  <div class="d-grid gap-2">
+                    <button class="btn btn-primary button">
+                      Añadir al Carrito
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col d-flex justify-content-center-ab-4">
+              <div
+                class="card shadow mb-1 bg-warning rounded"
+                style="width: 20rem"
+              >
+                <h5 class="card-title pt-2 text-center text-dark nombreLibro">
+                  Sherlock Holmes
+                </h5>
+                <img
+                  src="./imagenes/libro-10-array.png"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <p class="card-text text-dark-50 description">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                  <h5 class="text-dark">
+                    Precio: <span class="precio">$ 1000</span>
+                  </h5>
+                  <div class="d-grid gap-2">
+                    <button class="btn btn-primary button">
+                      Añadir al Carrito
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+<!-- FIN DE BIBLIOTECA-->
+<!--CARRITO DE COMPRAS-->
+         
+        <div
+          class="tab-pane fade carrito"
+          id="pills-contact"
+          role="tabpanel"
+          aria-labelledby="pills-contact-tab"
+        >
+        <table class="table table-striped table-hover">
+            <thead>
+              <tr class="text-dark">
+                <th scope="col">#</th>
+                <th scope="col">Producto</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Cantidad</th>
+              </tr>
+            </thead>
+            <tbody class="tbody">
+            
+            </tbody>
+          </table>
+          <br><br>
+          <div class="row mx-4">
+            <div class="col">
+                <h3 class="itemCartTotal">Total: 0</h3>
+            </div>
+            <div class="col d-flex justify-content-end">
+                <button class="btn btn-success">COMPRAR</button>
+            </div>
+          </div>
+        </div>
+      </div>
+<!--FIN DE CARRITO DE COMPRAS-->
+    </main>
+
+    <footer></footer>
+
     
-</body>
+    <script defer src="./main.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.js"
+      integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+      crossorigin="anonymous"
+    ></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
