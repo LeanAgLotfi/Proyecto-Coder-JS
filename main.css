@@ -4,378 +4,306 @@
     box-sizing: border-box;
 }
 
-.Body{
-  overflow: hidden;
-  background:linear-gradient(rgba(2, 2, 2, 0.824),rgba(141, 70, 12, 0.915));
-  max-height: 100vh;
+body{
+    background-color: goldenrod;
 }
 
-
-.header{
-    background-image: url(./imagenes/libros-10-background.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center center;
-    height: 95vh;
-    width: auto;
-    margin: 20px;
-    border-radius: 20px;
+header{
+    z-index: 100;
 }
 
-.titulo{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 30px 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-header .logo{
-    color: rgb(2, 2, 2);
-    font-weight: 700;
-    text-decoration: none;
-    font-size: 2em;
-    font-family: 'Abril Fatface', cursive;
-    font-family: 'Playfair Display', serif; 
-    letter-spacing: 2px;
-    
-}
-
-.LYL{
-    position: absolute;
-    top: 250px;
-    left: 60px;
-    background: rgba(255, 255, 255, 0.50);
-    border-radius: 30px;
-}
-
-.header ul{
-    text-decoration: none;
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.header ul li{
-    
-    font-weight: 200;
-    text-decoration: none;
-    font-size: 2em; 
-    letter-spacing: 2px;
-    padding-left: 30px;
-    padding-right: 0;
-    font-family: 'Nunito Sans', sans-serif;
-    margin: 5px;
-}
-
-#home{
-    background: rgb(141 69 12 / 78%);
-    border-radius: 20px;
-    padding-left: 20px;
-    padding-right:20px;
-}
-
-.header ul li a{
-    text-decoration: none;
-    color: rgb(255, 255, 255);
-    padding-left: 15px;
-    padding-right:15px;
-}
-
-.header ul li :hover{
-    background: rgb(141 69 12 / 78%);
-    border-radius: 20px;
-}
-
-.imagenesCarrusel{
-        position: absolute;
-        top: 150px;
-        left: 700px;
-        display:block;
-        border-radius: 20px;
-    }
-
-.slider{
-    width: 600px;
-    height: 390px;
-    border-radius: 10px;
+.description{
+    height: 25px;
     overflow: hidden;
+    transition: heigth .3s ease-in .3s; 
 }
 
-.slides{
-    width: 500%;
-    height: 500px;
+.description:hover{
+    height: 80px;
+}
+
+.Body{
+    overflow: hidden;
+    max-height: 100vh;
+  }
+  
+  
+  .header{
+      background-image: url(./imagenes/libros-10-background.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center center;
+      height: 95vh;
+      width: auto;
+  }
+  
+  .titulo{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 30px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
+  
+  header .logo{
+      color: rgb(2, 2, 2);
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 2em;
+      font-family: 'Abril Fatface', cursive;
+      font-family: 'Playfair Display', serif; 
+      letter-spacing: 2px;
+      
+  }
+  
+  .LYL{
+      position: absolute;
+      top: 250px;
+      left: 60px;
+      background: rgba(255, 255, 255, 0.50);
+      border-radius: 30px;
+  }
+  
+  .header ul{
+      text-decoration: none;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  }
+  
+  .header ul li{
+      
+      font-weight: 200;
+      text-decoration: none;
+      font-size: 2em; 
+      letter-spacing: 2px;
+      padding-left: 30px;
+      padding-right: 0;
+      font-family: 'Nunito Sans', sans-serif;
+      margin: 5px;
+  }
+  
+  #home{
+      background: rgb(141 69 12 / 78%);
+      border-radius: 20px;
+      padding-left: 20px;
+      padding-right:20px;
+  }
+  
+  .header ul li a{
+      text-decoration: none;
+      color: rgb(255, 255, 255);
+      padding-left: 15px;
+      padding-right:15px;
+  }
+  
+  .header ul li :hover{
+      background: rgb(141 69 12 / 78%);
+      border-radius: 20px;
+  }
+  
+  .imagenesCarrusel{
+          position: absolute;
+          top: 150px;
+          left: 700px;
+          display:block;
+          border-radius: 20px;
+      }
+  
+  .slider{
+      width: 600px;
+      height: 390px;
+      border-radius: 10px;
+      overflow: hidden;
+  }
+  
+  .slides{
+      width: 500%;
+      height: 500px;
+      display: flex;
+  }
+  
+  .slides input{
+      display: none;
+  }
+  
+  .slide{
+      width: 20%;
+      transition: 2s;
+  }
+  
+  .slide img{
+      width: 600px;
+      height: 390px;   
+  }
+  
+  .navigation-manual{
+  position: absolute;
+  width: 610px;
+  margin-top: -130px;
+  display: flex;
+  justify-content: center;
+  }
+  
+  .manual-btn{
+      border:2px solid rgb(22, 14, 2);
+      padding: 5px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 1s;
+  }
+  
+  .manual-btn:not(:last-child){
+      margin-right: 40px;
+  }
+  
+  .manual-btn:hover{
+      background: rgb(209, 135, 7);;
+  }
+  
+  #radio1:checked ~ .first{
+      margin-left: 0;
+  }
+  
+  #radio2:checked ~ .first{
+      margin-left: -20%;
+  }
+  
+  #radio3:checked ~ .first{
+      margin-left: -40%;
+  }
+  
+  #radio4:checked ~ .first{
+      margin-left: -60%;
+  }
+  
+  /*css for automatic navigation*/
+  
+  .navigation-auto{
+      position: absolute;
+      display: flex;
+      width: 610px;
+      justify-content: center;
+      margin-top: 130px;
+  }
+  
+  .navigation-auto div{
+      border:2px solid rgb(209, 135, 7); ;
+      padding: 5px;
+      border-radius: 10px;
+      transition: 1s;
+  }
+  
+  .navigation-auto div:not(:last-child){
+      margin-right: 40px;
+  }
+  
+  #radio1:checked ~ .navigation-auto .auto-btn1{
+      background: rgb(209, 135, 7);;
+  }
+  
+  #radio2:checked ~ .navigation-auto .auto-btn2{
+      background: rgb(209, 135, 7);;
+  }
+  
+  #radio3:checked ~ .navigation-auto .auto-btn3{
+      background: rgb(209, 135, 7);;
+  }
+  
+  #radio4:checked ~ .navigation-auto .auto-btn4{
+      background: rgb(209, 135, 7);;
+  }
+  
+  /*BIBLIOTECA*/
+  
+  .bibliotecaFondo{
+      display: flex;
+      justify-content: center;
+      background: beige;
+      padding: 20px;
+      background-image: url(./imagenes/libros-7-background.jpg);
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      background-position: center center;
+  }
+  
+  .fondoImagenBiblio img{
+      position: relative;
+      top: -20px; 
+      filter: drop-shadow(6px 6px 6px black);
+  }
+  
+  .bibliotecaNav ul {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      text-decoration: none;
+      font-size: 30px;
+      background: rgb(209, 135, 7);
+  }
+  
+  .bibliotecaNav ul li{
+      list-style: none; 
+      margin-right: 20px;
+      margin-left: 20px;
+      padding-left: 40px;
+      padding-right:40px ;
+  }
+  .bibliotecaNav ul li a{
+      text-decoration: none;
+      color: wheat;
+     
+  }
+  
+  .bibliotecaNav ul :hover{
+      color: white;
+      background: rgb(226, 146, 7);
+  }
+  
+  /*MAIN BIBLIOTECA*/
+  
+  .contenidoBiblio {
+      background: wheat;
+      padding: 30px;
+      margin: 10px;
+      display: flex;
+      justify-content: center;
+  }
+
+  img.card-img-top {
+    width: 259px;
+    height: 395px;
+}
+
+.carrito{
+    min-height: 70vh;
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.table__producto{
     display: flex;
 }
 
-.slides input{
-    display: none;
-}
-
-.slide{
-    width: 20%;
-    transition: 2s;
-}
-
-.slide img{
-    width: 600px;
-    height: 390px;   
-}
-
-.navigation-manual{
-position: absolute;
-width: 610px;
-margin-top: -130px;
-display: flex;
-justify-content: center;
-}
-
-.manual-btn{
-    border:2px solid rgb(22, 14, 2);
-    padding: 5px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 1s;
-}
-
-.manual-btn:not(:last-child){
-    margin-right: 40px;
-}
-
-.manual-btn:hover{
-    background: rgb(209, 135, 7);;
-}
-
-#radio1:checked ~ .first{
-    margin-left: 0;
-}
-
-#radio2:checked ~ .first{
-    margin-left: -20%;
-}
-
-#radio3:checked ~ .first{
-    margin-left: -40%;
-}
-
-#radio4:checked ~ .first{
-    margin-left: -60%;
-}
-
-/*css for automatic navigation*/
-
-.navigation-auto{
-    position: absolute;
-    display: flex;
-    width: 610px;
-    justify-content: center;
-    margin-top: 130px;
-}
-
-.navigation-auto div{
-    border:2px solid rgb(209, 135, 7); ;
-    padding: 5px;
-    border-radius: 10px;
-    transition: 1s;
-}
-
-.navigation-auto div:not(:last-child){
-    margin-right: 40px;
-}
-
-#radio1:checked ~ .navigation-auto .auto-btn1{
-    background: rgb(209, 135, 7);;
-}
-
-#radio2:checked ~ .navigation-auto .auto-btn2{
-    background: rgb(209, 135, 7);;
-}
-
-#radio3:checked ~ .navigation-auto .auto-btn3{
-    background: rgb(209, 135, 7);;
-}
-
-#radio4:checked ~ .navigation-auto .auto-btn4{
-    background: rgb(209, 135, 7);;
-}
-
-/*BIBLIOTECA*/
-
-.bibliotecaFondo{
-    display: flex;
-    justify-content: center;
-    background: beige;
-    padding: 20px;
-    background-image: url(./imagenes/libros-7-background.jpg);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-position: center center;
-}
-
-.fondoImagenBiblio img{
-    position: relative;
-    top: -20px; 
-    filter: drop-shadow(6px 6px 6px black);
-}
-
-.bibliotecaNav ul {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    text-decoration: none;
-    font-size: 30px;
-    background: rgb(209, 135, 7);
-}
-
-.bibliotecaNav ul li{
-    list-style: none; 
+.table__producto > img{
+    width: 9rem;
+    object-fit: contain;
+    border-radius: 6px;
     margin-right: 20px;
-    margin-left: 20px;
-    padding-left: 40px;
-    padding-right:40px ;
-}
-.bibliotecaNav ul li a{
-    text-decoration: none;
-    color: wheat;
-   
 }
 
-.bibliotecaNav ul :hover{
-    color: white;
-    background: rgb(226, 146, 7);
+.table__cantidad > input{
+    width: 40px;
+    border: none;
+    outline: 0;
+    font-size: 16px;
+    font-weight: 700;
+    margin-right: 30px;
+    margin-bottom: 20px;
 }
-
-/*MAIN BIBLIOTECA*/
-
-.contenidoBiblio {
-    background: wheat;
-    padding: 30px;
-    margin: 10px;
-    display: flex;
-    justify-content: center;
-}
-
-
-
-/*LIBROS*/
-
-.producto{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: column;
-    background: orange;
-    padding: 10px;
-    margin: 10px;
-    gap: 10px; 
-    width: 430px;
-    height: 600px;
-}
-
-.imgLibros{
-    width: 300px;
-    height: 300px;
-}
-
-#contenido{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
- .car{
-    display: flex;
-    font-size: 50px;
-    color: gold;
-    justify-content: flex-end;
-    align-items: center;
-    margin: 5px;
-    margin-right: 20px;
-   
-}
-
-p{
-    text-align: center;
-}
-
-.boton-agregar{
-    background-color: #fff;
-    border: 1px solid orange;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(2, 2, 2, 0.824);
-    color: orange;
-    font-size: 14px;
-    padding: 10px 25px;
-    cursor: pointer;
-    pointer-events: all;
-}
-
-#open{
-    position: absolute;
-    pointer-events: all;
-}
-
-/*.modal-container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    background-color: rgba(0, 0, 0, 0.4);
-    opacity: 0;
-    display: none;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100vw;
-}
-
-/*.modal-container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    background-color: rgba(0, 0, 0, 0.4);
-    opacity: 0;
-    display: none;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100vw;
-}
-
-.show{
-    pointer-events: auto;
-    opacity: 1;
-    display: flex;
-}
-
-.modal{
-    background-color: rgb(255 148 0 / 93%);
-    width: 400px;
-    max-width: 100%;
-    padding: 20px 50px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    box-shadow: 0 2px 4px rgba(2, 2, 2, 0.824);
-}
-
-.modal h1 {
-
-    color: white;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
-.modal p{
-    opacity: 0.7;
-    font-size: 14px;
-}*/

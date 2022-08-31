@@ -123,6 +123,28 @@ window.onload = function(){
     }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const stockProductos= 
 [
     {   nombre: ' don quijote',
