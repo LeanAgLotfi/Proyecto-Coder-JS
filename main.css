@@ -307,3 +307,8 @@ header{
     margin-right: 30px;
     margin-bottom: 20px;
 }
+
+.d-flex {
+    display: flex!important;
+    justify-content: center;
+}
