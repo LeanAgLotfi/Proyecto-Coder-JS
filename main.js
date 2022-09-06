@@ -1,23 +1,59 @@
-const Clickbutton = document.querySelectorAll('.button');
-const tbody = document.querySelector('.tbody')
+const tbody = document.querySelector('.tbody');
+const cart = document.querySelector("#cartita");
 let carrito = []
 
 
-Clickbutton.forEach(btn =>{
-    btn.addEventListener('click', addCarritoItem)
-})
+function crearCart(){
+    fetch('/stock.json')
+    .then((response) => response.json())
+    .then((json)=> {
 
-Clickbutton.forEach(btn => {
-        btn.addEventListener('click', () =>{
-    Toastify({
+        json.forEach((carta)=>{
+            
+            const div = document.createElement('div')
+            div.classList.add('d-flex')
+            div.classList.add('justify-content-center')
+            div.classList.add('ab-4')
+            div.innerHTML = `
+            <div class="card shadow mb-1 bg-warning rounded" style="width: 20rem">
+            <h5 class="card-title pt-2 text-center text-dark nombreLibro">${carta.nombre}</h5>
+            <img src="${carta.img}" class="card-img-top" alt="${carta.nombre}"/>
+            <div class="card-body">
+            <p class="card-text text-dark-50 description">
+            ${carta.desc}
+            </p>
+            <h5 class="text-dark">Precio: <span class="precio">$${carta.precio}</span> </h5>
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary boton">
+                Añadir al Carrito
+                </button>
+            </div>
+            </div>
+      </div>
+            `
+            cart.appendChild(div)
 
-        text: "Agregado al carrito!",
+           //BOTON FUNCIONAL NUEVO ARREGLO SIN CONSTANTE 
+            div.querySelector(".boton").addEventListener('click', addCarritoItem)
+                        
+           //EL TOSTIFY "LIBRERIA DE AVISO DE BOTON"
+            div.querySelector(".boton").addEventListener('click', () =>{
+            Toastify({
         
-        duration: 3000
+                text: "Agregado al carrito!",
+                
+                duration: 3000,
+                
+                }).showToast();
+            })
         
-        }).showToast();
-    })
-})
+        })
+    });
+}
+
+crearCart()
+
+
 
 function addCarritoItem(e){
     const button = e.target
@@ -135,13 +171,7 @@ window.onload = function(){
     }
 }
 
-Toastify({
 
-    text: "This is a toast",
-    
-    duration: 3000
-    
-    }).showToast();
 
 
 

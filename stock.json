@@ -58,7 +58,7 @@
         "precio":250,
         "desc":"Narra las aventuras y desventuras amorosas de las hermanas Bennet, centrándose en el personaje de Elizabeth",
         "genero":"Romance",
-        "img":"./imagenes/libro-7-array.png",
+        "img":"./imagenes/libro-1-array.png",
         "id":7,
         "cantidad":1
     },
