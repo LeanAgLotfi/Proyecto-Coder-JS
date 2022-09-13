@@ -27,7 +27,7 @@
         "id":3
     },
 
-    {   "nombre": "'it'", 
+    {   "nombre": "it", 
         "precio":700,
         "desc":"El payaso maligno venido del espacio solo para a terrorizar y deborar",
         "genero":"Terror",

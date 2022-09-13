@@ -3,58 +3,6 @@ const cart = document.querySelector("#cartita");
 let carrito = []
 
 
-function crearCart(){
-    fetch('/stock.json')
-    .then((response) => response.json())
-    .then((json)=> {
-
-        json.forEach((carta)=>{
-            
-            const div = document.createElement('div')
-            div.classList.add('d-flex')
-            div.classList.add('justify-content-center')
-            div.classList.add('ab-4')
-            div.innerHTML = `
-            <div class="card shadow mb-1 bg-warning rounded" style="width: 20rem">
-            <h5 class="card-title pt-2 text-center text-dark nombreLibro">${carta.nombre}</h5>
-            <img src="${carta.img}" class="card-img-top" alt="${carta.nombre}"/>
-            <div class="card-body">
-            <p class="card-text text-dark-50 description">
-            ${carta.desc}
-            </p>
-            <h5 class="text-dark">Precio: <span class="precio">$${carta.precio}</span> </h5>
-            <div class="d-grid gap-2">
-                <button class="btn btn-primary boton">
-                Añadir al Carrito
-                </button>
-            </div>
-            </div>
-      </div>
-            `
-            cart.appendChild(div)
-
-           //BOTON FUNCIONAL NUEVO ARREGLO SIN CONSTANTE 
-            div.querySelector(".boton").addEventListener('click', addCarritoItem)
-                        
-           //EL TOSTIFY "LIBRERIA DE AVISO DE BOTON"
-            div.querySelector(".boton").addEventListener('click', () =>{
-            Toastify({
-        
-                text: "Agregado al carrito!",
-                
-                duration: 3000,
-                
-                }).showToast();
-            })
-        
-        })
-    });
-}
-
-crearCart()
-
-
-
 function addCarritoItem(e){
     const button = e.target
     const item = button.closest('.card')
@@ -158,6 +106,56 @@ function sumaCantidad(e){
 
 }
 
+function crearCart(){
+    fetch('https://631f4b3758a1c0fe9f65bc11.mockapi.io/api/v1/stats') //('/stock.json')
+    .then((response) => response.json())
+    .then((json)=> {
+
+        json.forEach((carta)=>{
+            
+            const div = document.createElement('div')
+            div.classList.add('d-flex')
+            div.classList.add('justify-content-center')
+            div.classList.add('ab-4')
+            div.innerHTML = `
+            <div class="card shadow mb-1 bg-warning rounded" style="width: 20rem">
+            <h5 class="card-title pt-2 text-center text-dark nombreLibro">${carta.nombre}</h5>
+            <img src="${carta.img}" class="card-img-top" alt="${carta.nombre}"/>
+            <div class="card-body">
+            <p class="card-text text-dark-50 description">
+            ${carta.desc}
+            </p>
+            <h5 class="text-dark">Precio: <span class="precio">$${carta.precio}</span> </h5>
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary boton">
+                Añadir al Carrito
+                </button>
+            </div>
+            </div>
+      </div>
+            `
+            cart.appendChild(div)
+
+           //BOTON FUNCIONAL NUEVO ARREGLO SIN CONSTANTE 
+            div.querySelector(".boton").addEventListener('click', addCarritoItem)
+                        
+           //EL TOSTIFY "LIBRERIA DE AVISO DE BOTON"
+            div.querySelector(".boton").addEventListener('click', () =>{
+            Toastify({
+        
+                text: "Agregado al carrito!",
+                
+                duration: 3000,
+                
+                }).showToast();
+            })
+        
+        })
+    });
+}
+
+crearCart()
+
 function esLocalStorage(){
     localStorage.setItem('carrito', JSON.stringify(carrito))
 }
@@ -173,115 +171,6 @@ window.onload = function(){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-const stockProductos= 
-[
-    {   nombre: ' don quijote',
-        precio:200,
-        desc:'Las aventuras de Don quijote y Sancho panza en una encrucijada por la mancha',
-        genero:'Aventura',
-        img:'./imagenes/libro-1-array.png',
-        id:1,
-    },
-
-    {   nombre: ' moby dick', 
-        precio:120,
-        desc:'Una historia de marinos en busca del tesoro mas grande, capturar a "la gran ballena blanca"',
-        genero:'Aventura',
-        img:'./imagenes/libro-2-array.png',
-        id:2
-    },
-
-    {   nombre: ' fantasma de la opera',
-        precio:100,
-        desc:'Un hombre atormentado cuyo rostro, deformado de nacimiento, le otorgaba el aspecto de una verdadera aparición en el subterraneo de la opera',
-        genero:'Terror',
-        img:'./imagenes/libro-3-array.png',
-        cantidad:1,
-        id:3,
-    },
-
-    {   nombre: ' it', 
-        precio:700,
-        desc:'El payaso maligno venido del espacio solo para aterrorizar y deborar',
-        genero:'Terror',
-        img:'./imagenes/libro-4-array.png',
-        cantidad:1,
-        id:4,
-    },
-
-    {   nombre: ' harry potter',
-        precio:800,
-        desc:'La historia del gran mago Harry Potter y sus aventuras por Howards',
-        genero:'Fantasia',
-        img:'./imagenes/libro-5-array.png',
-        cantidad:1,
-        id:5,
-    },
-
-    {   nombre: ' el señor de los anillos',
-        precio:500,
-        desc:'La encrucijada mas grande y la posible guerra por el poder del anillo y su deseo de poseerlo!',
-        genero:'Fantasia',
-        img:'./imagenes/libro-6-array.png',
-        cantidad:1,
-        id:6,
-    },
-
-    {   nombre: ' orgullo y prejuicio', 
-        precio:250,
-        desc:'Narra las aventuras y desventuras amorosas de las hermanas Bennet, centrándose en el personaje de Elizabeth',
-        genero:'Romance',
-        img:'./imagenes/libro-7-array.png',
-        id:7,
-    },
-
-    {   nombre: ' bajo la misma estrella', 
-        precio:120,
-        desc:' Una adolescente de 16 años de edad llamada Hazel Grace Lancaster, quien padece cáncer de tiroides, se enamora de un ex jugador de basquet que reside en el mismo hospital',
-        genero:'Romance',
-        img:'./imagenes/libro-8-array.png',
-        id:8,
-    },
-
-    {   nombre: ' crimen de la calle morgue', 
-        precio:400,
-        desc:'Un joven francés le llama la atención un informe periodístico sobre un misterioso doble asesinato en París. Junto con un amigo, estudia todos los testimonios y examina la escena del crimen.',
-        genero:'Policial',
-        img:'./imagenes/libro-9-array.png',
-        id:9,
-    },
-
-    {   nombre: 'sherlock holmes', 
-        precio:250,
-        desc:'Las Grandes aventuras de Sherlock y Watson resolviendo misterios por las calles de Londres',
-        genero:'Policial',
-        img:'./imagenes/libro-10-array.png',
-        id: 10,
-    }
-];
-
-const nuevoArray = ['don quijote', 'moby dick', 'fantasma de la opera', 'it', 'harry potter', 'el señor de los anillos', 'orgullo y prejuicio', 'bajo la misma estrella', 'crimen de la calle morgue', 'sherlock holmes'];
-// const nombresLibros = document.getElementsByClassName('nombreLibro');
 let counter = 1;
 setInterval(function(){
     document.getElementById('radio' + counter).checked = true;
@@ -295,34 +184,3 @@ function verificar(){
     document.getElementById('btn$')
     alert(`seleccionaste ${i} de elementos`)
 }
-
-function algo(){
-    stockProductos.forEach(elemento => {
-        document.getElementsByClassName("nombreLibro").innerHTML = `${elemento.nombre}`
-    });
-}
- algo();
-/*const productoCarrito = document.querySelector("#cabeza");
-let cartita = document.getElementById('cartita')
-
-
-function stock(){
-    stockProductos.forEach((productos) => {
-       cartita.innerHTML += 
-   `<div class="col d-flex justify-content-center-ab-4">
-       <div class="card shadow mb-1 bg-warning rounded" style="width: 20rem;">
-           <h5 class="card-title pt-2 text-center text-dark">${productos.nombre}</h5>
-           <img src="./imagenes/libro-1-array.png" class="card-img-top" alt="...">
-           <div class="card-body">
-             <p class="card-text text-dark-50 description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-             <h5 class="text-dark">Precio: <span class="precio">$ 5</span></h5>
-             <div class="d-grid gap-2">
-               <button class="btn btn-primary button">Añadir al Carrito</button>
-             </div>
-           </div>
-         </div>
-   </div>`
-    });
-}
-
-stock();*/
