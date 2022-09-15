@@ -46,6 +46,14 @@ ul#pills-tab {
 
 svg.bi.bi-cart-check {
     color: black;
+    width: 30px;
+    height: 25px;
+}
+
+svg.bi.bi-house {
+    color: black;
+    width: 30px;
+    height: 25px;
 }
 
 .description{
@@ -80,7 +88,7 @@ svg.bi.bi-cart-check {
       background-size: cover;
       background-attachment: fixed;
       background-position: center center;
-      height: 95vh;
+      height: 85vh;
       width: auto;
   }
   
@@ -155,7 +163,7 @@ svg.bi.bi-cart-check {
   
   .imagenesCarrusel{
           position: absolute;
-          top: 40%;
+          top: 30%;
           left: 50%;
           display:block;
           border-radius: 20px;
@@ -401,4 +409,8 @@ svg.bi.bi-cart-check {
 .d-flex {
     display: flex!important;
     justify-content: center;
+}
+
+.tituloAlerta{
+    color: gold;
 }

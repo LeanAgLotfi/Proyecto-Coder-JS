@@ -173,6 +173,11 @@ function crearCart(){
                 style: {
                     background: "linear-gradient(to right, goldenrod, #141414)",
                   },
+
+                gravity: "bottom", 
+
+                position: "right",
+                
                 }).showToast();
             })
         
@@ -192,12 +197,20 @@ function botonComprar(){
 }
 
 function estoyComprando(){
+    carrito.length = 0
+    renderCarrito()
     Swal.fire({
         position: 'center',
         icon: 'success',
-        title: 'Your work has been saved',
-        showConfirmButton: false,
-        timer: 1500
+        title: 'Compra Realizada!',
+        text:'Recibimos correctamente el pago de tu compra, ya esta todo listo para que enviemos tus libros',
+        showConfirmButton: true,
+        confirmButtonText:'Seguir Comprando!',
+        confirmButtonColor:'goldenrod',
+        background:'#1e1e1e',
+        customClass:{
+            title:'tituloAlerta',
+        },
       })
 }
 
