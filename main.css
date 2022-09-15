@@ -3,13 +3,49 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+/*COLORES DE LA PAGINA*/
 body{
-    background-color: goldenrod;
+    background-color: #141414;
+    color: goldenrod;
+}
+
+.BGdoc{
+    background: #fff;
+    color: #141414;
 }
 
 header{
     z-index: 100;
+}
+.nav-link:hover{
+    color: #141414;
+}
+.nav-link{
+    color: #141414;
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #040404;
+    background-color: goldenrod;
+}
+
+nav.navegacion {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logoShow{
+    width: 200px;
+    height: 100px;
+}
+
+ul#pills-tab {
+    display: flex;
+    justify-content: flex-end;
+}
+
+svg.bi.bi-cart-check {
+    color: black;
 }
 
 .description{
@@ -26,8 +62,18 @@ header{
     overflow: hidden;
     max-height: 100vh;
   }
-  
-  
+ 
+  .imgcontenedorLogo{
+   display: flex;
+   justify-content: flex-start;
+   position: static;
+   background: #fff;
+  }
+
+.colorBiblio{
+    color: goldenrod;
+}
+
   .header{
       background-image: url(./imagenes/libros-10-background.jpg);
       background-repeat: no-repeat;
@@ -40,7 +86,7 @@ header{
   
   .titulo{
       position: absolute;
-      top: 0;
+      top: 30%;
       left: 0;
       width: 100%;
       padding: 30px 50px;
@@ -62,7 +108,7 @@ header{
   
   .LYL{
       position: absolute;
-      top: 250px;
+      top: 80%;
       left: 60px;
       background: rgba(255, 255, 255, 0.50);
       border-radius: 30px;
@@ -109,8 +155,8 @@ header{
   
   .imagenesCarrusel{
           position: absolute;
-          top: 150px;
-          left: 700px;
+          top: 40%;
+          left: 50%;
           display:block;
           border-radius: 20px;
       }
@@ -275,6 +321,50 @@ header{
       justify-content: center;
   }
 
+  #btn{
+    background: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform:uppercase;
+    border: none;
+    transition: .3s ease all;
+    border-radius: 5px;
+    padding: .5rem;
+    outline: #141414 solid 1px;
+  } 
+
+#btn:hover{
+    background: #141414;
+}
+
+#btn .botonspan{
+    transition: .4s ease-in-out all; 
+    position: relative;
+    left: 80%;
+}
+
+.icono{
+    display: flex;
+    align-items: center;
+    color: goldenrod;
+}
+
+#btn:hover .botonspan{
+    left: -30px;
+}
+
+.bi-cart{
+    transition: .3s ease-in-out all;
+        width: 30px;
+        height: 30px;
+        position: relative;
+        left: 45%;
+       opacity: 0;
+    }
+#btn:hover .bi-cart{
+    left: 180px;
+   opacity: 1;
+}
   img.card-img-top {
     width: 259px;
     height: 395px;
