@@ -25,69 +25,7 @@ const logo = document.querySelector(".show");
 let carrito = []
 
 
-function crearCart(){
-    fetch  ('https://631f4b3758a1c0fe9f65bc11.mockapi.io/api/v1/stats')
-    // ('/stock.json') este es el fetch si se abre con mi json que cree por defecto de un array con mis libros seleccionados!
-    .then((response) => response.json())
-    .then((json)=> {
 
-        json.forEach((carta)=>{
-            
-            const div = document.createElement('div')
-            div.classList.add('d-flex')
-            div.classList.add('justify-content-center')
-            div.classList.add('ab-4')
-            div.innerHTML = `
-            <div class="card shadow mb-1 BGdoc rounded" style="width: 20rem">
-            <h5 class="card-title pt-2 text-center text-dark nombreLibro">${carta.nombre}</h5>
-            <img src="${carta.img}" class="card-img-top" alt="${carta.nombre}"/>
-            <div class="card-body">
-            <p class="card-text text-dark-50 description">
-            ${carta.desc}
-            </p>
-            <h5 class="text-dark">Precio: <span class="precio">$${carta.precio}</span> </h5>
-            <div class="d-grid gap-2 botonArmado">
-                <button class="btn boton" id="btn">
-                <div class="icono">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
-                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-                </svg>
-                <div/>
-                <span class="botonspan">Añadir<span/>
-                </button>
-            </div>
-            </div>
-      </div>
-            `
-            cart.appendChild(div)
-
-           //BOTON FUNCIONAL NUEVO ARREGLO SIN CONSTANTE 
-            div.querySelector(".boton").addEventListener('click', addCarritoItem)
-                        
-           //EL TOSTIFY "LIBRERIA DE AVISO DE BOTON"
-            div.querySelector(".boton").addEventListener('click', () =>{
-            Toastify({
-        
-                text: "Agregado al carrito!",
-                
-                duration: 3000,
-                
-                style: {
-                    background: "linear-gradient(to right, goldenrod, #141414)",
-                  },
-
-                gravity: "bottom", 
-
-                position: "right",
-                
-                }).showToast();
-            })
-        
-        })
-    });
-}
-
-crearCart()
 
 
 function addCarritoItem(e){
@@ -193,6 +131,69 @@ function sumaCantidad(e){
 
 }
 
+function crearCart(){
+    fetch  ('https://631f4b3758a1c0fe9f65bc11.mockapi.io/api/v1/stats')
+    // ('/stock.json') este es el fetch si se abre con mi json que cree por defecto de un array con mis libros seleccionados!
+    .then((response) => response.json())
+    .then((json)=> {
+
+        json.forEach((carta)=>{
+            
+            const div = document.createElement('div')
+            div.classList.add('d-flex')
+            div.classList.add('justify-content-center')
+            div.classList.add('ab-4')
+            div.innerHTML = `
+            <div class="card shadow mb-1 BGdoc rounded" style="width: 20rem">
+            <h5 class="card-title pt-2 text-center text-dark nombreLibro">${carta.nombre}</h5>
+            <img src="${carta.img}" class="card-img-top" alt="${carta.nombre}"/>
+            <div class="card-body">
+            <p class="card-text text-dark-50 description">
+            ${carta.desc}
+            </p>
+            <h5 class="text-dark">Precio: <span class="precio">$${carta.precio}</span> </h5>
+            <div class="d-grid gap-2 botonArmado">
+                <button class="btn boton" id="btn">
+                <div class="icono">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                </svg>
+                <div/>
+                <span class="botonspan">Añadir<span/>
+                </button>
+            </div>
+            </div>
+      </div>
+            `
+            cart.appendChild(div)
+
+           //BOTON FUNCIONAL NUEVO ARREGLO SIN CONSTANTE 
+            div.querySelector(".boton").addEventListener('click', addCarritoItem)
+                        
+           //EL TOSTIFY "LIBRERIA DE AVISO DE BOTON"
+            div.querySelector(".boton").addEventListener('click', () =>{
+            Toastify({
+        
+                text: "Agregado al carrito!",
+                
+                duration: 3000,
+                
+                style: {
+                    background: "linear-gradient(to right, goldenrod, #141414)",
+                  },
+
+                gravity: "bottom", 
+
+                position: "right",
+                
+                }).showToast();
+            })
+        
+        })
+    });
+}
+
+crearCart()
 // home.addEventListener("click", ()=>{
 //     logo.classList.remove('imgcontenedorLogo')
 // });
